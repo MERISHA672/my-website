@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melissa's Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #6c2bd9;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Home section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #6c2bd9, #a855f7);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #6c2bd9;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #ffd700;
+        }
+
+        /* About section */
+        .about {
+            padding: 70px 10%;
+            text-align: center;
+        }
+
+        .about h2,
+        .skills h2,
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #6c2bd9;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* Skills */
+        .skills {
+            padding: 70px 10%;
+            background-color: white;
+            text-align: center;
+        }
+
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .skill {
+            background-color: #f3e8ff;
+            padding: 25px;
+            width: 200px;
+            border-radius: 15px;
+        }
+
+        .skill h3 {
+            color: #6c2bd9;
+            margin-bottom: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 70px 10%;
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            background-color: #6c2bd9;
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4c1d95;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Melissa</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Hello, I'm Melissa 👋</h1>
+            <p>I'm an IT student interested in technology and web development.</p>
+            <a href="#about" class="button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am an Information Technology student who enjoys learning
+            about programming, web development, databases and networking.
+            My goal is to improve my skills and create useful technology
+            solutions.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill-container">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Creating the structure of websites.</p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Designing beautiful and responsive websites.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Writing programs and analyzing data.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Networking</h3>
+                <p>Learning how computer networks work.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Melissa. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function sendMessage(event) {
+            event.preventDefault();
+
+            alert("Thank you for contacting me! 😊");
+
+        }
+    </script>
+
+</body>
+</html>
